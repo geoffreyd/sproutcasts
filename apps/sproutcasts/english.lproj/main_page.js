@@ -11,12 +11,28 @@ Sproutcasts.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'labelView'.w(),
+    childViews: 'labelView textViews'.w(),
     
     labelView: SC.LabelView.design({
-      layout: { centerX: 0, centerY: 0, width: 100, height: 18 },
-      tagName: "h1", value: "Hello World"
+      layout: { centerX: 0, top: 10, width: 200, height: 18 },
+      tagName: "h1", 
+      value: "Hello World"
+    }),
+    
+    textViews: SC.View.design({
+      layout: { centerX: 0, top: 50, width: 300, height: 26 },
+      childViews: [
+        SC.TextFieldView.design({
+          layout: { left: 3, width: 130, height: 20, centerY:0},
+          value: "First Name"
+        }),
+        SC.TextFieldView.design({
+          layout: { right: 3, width: 130, height: 20, centerY:0},
+          value: "Last Name"
+        })
+      ]
     })
+    
   })
 
 });

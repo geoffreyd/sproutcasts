@@ -15,16 +15,10 @@ Sproutcasts.Person = SC.Record.extend(
 /** @scope Sproutcasts.Person.prototype */ {
 
   firstName: SC.Record.attr(String),
-	lastName: SC.Record.attr(String),
-	
-	fullName: function() {
-		console.log("calculating fullName") ;
-		return this.get('firstName')+" "+this.get('lastName') ;
-	}.property('firstName', 'lastName').cacheable(),
-	
-	fullNameObserver: function()
-	{
-		console.log("I Saw fullName change") ;
-	}.observes('fullName')
+  lastName: SC.Record.attr(String),
+  
+  fullName: function() {
+    return this.get('firstName')+" "+this.get('lastName') ;
+  }.property('firstName', 'lastName').cacheable()
 
 }) ;
