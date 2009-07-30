@@ -17,6 +17,7 @@ Sproutcasts.main = function main() {
   // The default code here will make the mainPane for your application visible
   // on screen.  If you app gets any level of complexity, you will probably 
   // create multiple pages and panes.  
+  var mainPane = Sproutcasts.getPath('mainPage.mainPane') ;
   Sproutcasts.getPath('mainPage.mainPane').append() ;
 
   // Step 2. Set the content property on your primary controller.
@@ -24,6 +25,11 @@ Sproutcasts.main = function main() {
 
   // TODO: Set the content property on your primary controller
   // ex: .contactsController.set('content',.contacts);
+  
+  var person = Sproutcasts.store.createRecord(Sproutcasts.Person, {firstName:"John", lastName:"Smith"}) ;
+  
+  Sproutcasts.personController.set('content', person) ;
+  mainPane.makeFirstResponder(mainPane.get('responderView')) ;
 
 } ;
 

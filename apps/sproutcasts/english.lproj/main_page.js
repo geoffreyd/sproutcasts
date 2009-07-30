@@ -16,23 +16,22 @@ Sproutcasts.mainPage = SC.Page.design({
     labelView: SC.LabelView.design({
       layout: { centerX: 0, top: 10, width: 200, height: 18 },
       tagName: "h1", 
-      value: "Hello World"
+      valueBinding: "Sproutcasts.personController.greeting"
     }),
-    
+  
     textViews: SC.View.design({
       layout: { centerX: 0, top: 50, width: 300, height: 26 },
       childViews: [
         SC.TextFieldView.design({
           layout: { left: 3, width: 130, height: 20, centerY:0},
-          value: "First Name"
+          valueBinding: "Sproutcasts.personController.firstName"
         }),
         SC.TextFieldView.design({
           layout: { right: 3, width: 130, height: 20, centerY:0},
-          value: "Last Name"
+          valueBinding: "Sproutcasts.personController.lastName"
         })
       ]
     })
-    
   })
 
 });
